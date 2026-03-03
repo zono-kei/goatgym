@@ -42,8 +42,9 @@ export const Header = ({ className = "" }: { className?: string }) => {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="font-black text-2xl tracking-tighter"
+          className="font-black text-2xl tracking-tighter flex items-center gap-2"
         >
+          <img src="/logo-goat.png" alt="GOAT Logo" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
           GOAT
         </motion.div>
         <motion.div 
@@ -70,7 +71,10 @@ export const Header = ({ className = "" }: { className?: string }) => {
             className="fixed inset-0 z-[100] bg-[#F9F6F0] text-[#4A4238] flex flex-col"
           >
             <div className="flex justify-between items-center p-6">
-              <div className="font-black text-2xl tracking-tighter">GOAT</div>
+              <div className="font-black text-2xl tracking-tighter flex items-center gap-2">
+                <img src="/logo-goat.png" alt="GOAT Logo" className="w-8 h-8 object-contain" />
+                GOAT
+              </div>
               <button onClick={() => setIsOpen(false)} className="hover:opacity-80 hover:scale-110 transition-all">
                 <X size={32} />
               </button>
@@ -98,12 +102,12 @@ export const STRENGTHS = [
   { 
     title: "初心者歓迎・安心設計", 
     desc: "格闘家＝怖いというイメージを払拭。優しく丁寧な指導が特徴です。",
-    img: "/strength2.jpg" // 仮画像: ミット打ち パーソナル
+    img: "/strength3.jpg" // 仮画像: ミット打ち パーソナル
   },
   { 
     title: "現役格闘家による指導", 
     desc: "本物の知識と経験で、あなたに最適なトレーニングを提供します。",
-    img: "/strength3.jpg" // 仮画像: 筋トレ 運動（スクワット）
+    img: "/strength2.jpg" // 仮画像: 筋トレ 運動（スクワット）
   }
 ];
 
@@ -172,6 +176,11 @@ export const Wireframe = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-[#4A4238]/90 via-[#4A4238]/60 to-transparent"></div>
       </motion.div>
       
+      {/* ヤギのロゴ透かし */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center md:justify-end pointer-events-none opacity-[0.08] mix-blend-overlay">
+        <img src="/logo-goat.png" alt="GOAT Logo" className="w-[150%] md:w-[80%] max-w-none object-contain translate-x-1/4" />
+      </div>
+
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -262,8 +271,13 @@ export const Wireframe = () => (
     </section>
 
     {/* Trainer Section */}
-    <section id="trainer" className="bg-[#F0EBE1] py-24 px-8">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+    <section id="trainer" className="bg-[#F0EBE1] py-24 px-8 relative overflow-hidden">
+      {/* ヤギのロゴ透かし（トレーナーセクション） */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.03] mix-blend-multiply">
+        <img src="/logo-goat.png" alt="GOAT Logo" className="w-[150%] md:w-[80%] max-w-none object-contain" />
+      </div>
+
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center relative z-10">
         <motion.div 
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
