@@ -42,9 +42,8 @@ export const Header = ({ className = "" }: { className?: string }) => {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="font-black text-2xl tracking-tighter flex items-center gap-2"
+          className="font-black text-2xl tracking-tighter"
         >
-          <img src="/logo-goat.png" alt="GOAT Logo" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
           GOAT
         </motion.div>
         <motion.div 
@@ -71,10 +70,7 @@ export const Header = ({ className = "" }: { className?: string }) => {
             className="fixed inset-0 z-[100] bg-[#F9F6F0] text-[#4A4238] flex flex-col"
           >
             <div className="flex justify-between items-center p-6">
-              <div className="font-black text-2xl tracking-tighter flex items-center gap-2">
-                <img src="/logo-goat.png" alt="GOAT Logo" className="w-8 h-8 object-contain" />
-                GOAT
-              </div>
+              <div className="font-black text-2xl tracking-tighter">GOAT</div>
               <button onClick={() => setIsOpen(false)} className="hover:opacity-80 hover:scale-110 transition-all">
                 <X size={32} />
               </button>
@@ -96,17 +92,17 @@ export const Header = ({ className = "" }: { className?: string }) => {
 export const STRENGTHS = [
   { 
     title: "健康改善・動ける身体", 
-    desc: "ただ痩せるだけでなく、日常生活が楽になる身体づくりを目指します。",
+    desc: "ただ痩せるだけでなく、\n日常生活が楽になる身体づくりを目指します。",
     img: "/strength1.jpg" // 仮画像: 運動 パーソナル
   },
   { 
     title: "初心者歓迎・安心設計", 
-    desc: "格闘家＝怖いというイメージを払拭。優しく丁寧な指導が特徴です。",
+    desc: "格闘家＝怖いというイメージを払拭。\n優しく丁寧な指導が特徴です。",
     img: "/strength3.jpg" // 仮画像: ミット打ち パーソナル
   },
   { 
     title: "現役格闘家による指導", 
-    desc: "本物の知識と経験で、あなたに最適なトレーニングを提供します。",
+    desc: "本物の知識と経験で、\nあなたに最適なトレーニングを提供します。",
     img: "/strength2.jpg" // 仮画像: 筋トレ 運動（スクワット）
   }
 ];
@@ -207,14 +203,20 @@ export const Wireframe = () => (
     </section>
 
     {/* Concept Section */}
-    <section id="concept" className="py-24 px-8 max-w-6xl mx-auto">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-20"
-      >
+    <section id="concept" className="py-24 px-8 relative overflow-hidden">
+      {/* ヤギのロゴ透かし（コンセプトセクション） */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.02] mix-blend-multiply">
+        <img src="/logo-goat.png" alt="GOAT Logo" className="w-[120%] md:w-[60%] max-w-none object-contain" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
         <h2 className="text-sm font-bold text-[#6B705C] tracking-widest mb-2">CONCEPT</h2>
         <p className="text-2xl sm:text-3xl md:text-4xl font-black mb-10 font-sans tracking-normal">「将来の不安に、<br className="sm:hidden" />今動く。」</p>
         <div className="text-[#7A7268] text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto space-y-8">
@@ -263,10 +265,11 @@ export const Wireframe = () => (
             <div className="flex-1">
               <div className="text-[#6B705C]/20 font-sans text-6xl mb-4 font-black transition-transform duration-500 group-hover:-translate-y-2">0{i+1}</div>
               <h3 className="text-2xl md:text-3xl font-bold mb-6 font-sans tracking-normal text-[#4A4238] group-hover:text-[#6B705C] transition-colors duration-300">{s.title}</h3>
-              <p className="text-[#7A7268] text-lg leading-relaxed">{s.desc}</p>
+              <p className="text-[#7A7268] text-lg leading-relaxed whitespace-pre-line">{s.desc}</p>
             </div>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
 
