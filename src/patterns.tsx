@@ -93,17 +93,17 @@ export const STRENGTHS = [
   { 
     title: "健康改善・動ける身体", 
     desc: "ただ痩せるだけでなく、日常生活が楽になる身体づくりを目指します。",
-    img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop" // 仮画像: 運動 パーソナル
+    img: "/strength1.jpg" // 仮画像: 運動 パーソナル
   },
   { 
     title: "初心者歓迎・安心設計", 
     desc: "格闘家＝怖いというイメージを払拭。優しく丁寧な指導が特徴です。",
-    img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1470&auto=format&fit=crop" // 仮画像: ミット打ち パーソナル
+    img: "/strength2.jpg" // 仮画像: ミット打ち パーソナル
   },
   { 
     title: "現役格闘家による指導", 
     desc: "本物の知識と経験で、あなたに最適なトレーニングを提供します。",
-    img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop" // 仮画像: 筋トレ 運動（スクワット）
+    img: "/strength3.jpg" // 仮画像: 筋トレ 運動（スクワット）
   }
 ];
 
@@ -168,7 +168,7 @@ export const Wireframe = () => (
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0 z-0"
       >
-        <Image src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop" alt="Gym Background" className="w-full h-full" />
+        <Image src="/hero.jpg" alt="Gym Background" className="w-full h-full" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#4A4238]/90 via-[#4A4238]/60 to-transparent"></div>
       </motion.div>
       
@@ -272,7 +272,7 @@ export const Wireframe = () => (
           className="flex-1 w-full overflow-hidden rounded-[2rem] shadow-lg shadow-[#4A4238]/10 group"
         >
           {/* 仮画像: トレーナー 格闘家（試合風景） */}
-          <Image src="https://images.unsplash.com/photo-1599552375246-245452119f4c?q=80&w=1470&auto=format&fit=crop" alt="Trainer" className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" />
+          <Image src="/trainer.jpg" alt="Trainer" className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" />
         </motion.div>
         <motion.div 
           initial={{ opacity: 0, x: 40 }}
